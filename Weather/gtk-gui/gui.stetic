@@ -1,12 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <stetic-interface>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/Weather.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="799 576">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="Title" translatable="yes">Wetter</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <placeholder />
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="locationEntry">
+            <property name="MemberName" />
+            <property name="WidthRequest">273</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+            <signal name="TextInserted" handler="SearchLocation" />
+          </widget>
+          <packing>
+            <property name="X">230</property>
+            <property name="Y">227</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="locationLabel">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nach Stadt suchen</property>
+          </widget>
+          <packing>
+            <property name="X">234</property>
+            <property name="Y">205</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
